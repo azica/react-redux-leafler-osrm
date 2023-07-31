@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import RouteList from "./components/RouteList/RouteList";
+import Map from "./components/Map/Map";
+import { Col, Layout, Row } from "antd";
+
+const { Header, Footer, Content } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Header>Header</Header>
+      <Content>
+        <Row>
+          <Col xs={24} sm={24} md={10} lg={10}>
+            <RouteList />
+          </Col>
+          <Col xs={24} sm={24} md={14} lg={14}>
+            <Map />
+          </Col>
+        </Row>
+      </Content>
+      <Footer>Footer</Footer>
+    </Layout>
   );
 }
 
